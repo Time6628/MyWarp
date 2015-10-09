@@ -11,4 +11,5 @@ me.taylorkelly.mywarp.util
 me.taylorkelly.mywarp.util.i18n
 me.taylorkelly.mywarp.util.profile
 me.taylorkelly.mywarp.warp
+me.taylorkelly.mywarp.warp.authorization
 me.taylorkelly.mywarp.warp.event
