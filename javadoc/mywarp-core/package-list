@@ -1,11 +1,12 @@
 me.taylorkelly.mywarp
 me.taylorkelly.mywarp.command
+me.taylorkelly.mywarp.command.annotation
 me.taylorkelly.mywarp.command.definition
 me.taylorkelly.mywarp.command.paginator
-me.taylorkelly.mywarp.command.parametric
-me.taylorkelly.mywarp.command.parametric.binding
-me.taylorkelly.mywarp.command.parametric.economy
 me.taylorkelly.mywarp.command.printer
+me.taylorkelly.mywarp.command.provider
+me.taylorkelly.mywarp.command.provider.exception
+me.taylorkelly.mywarp.command.provider.magic
 me.taylorkelly.mywarp.economy
 me.taylorkelly.mywarp.limit
 me.taylorkelly.mywarp.sign
