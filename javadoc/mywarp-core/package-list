@@ -13,7 +13,6 @@ me.taylorkelly.mywarp.platform.profile
 me.taylorkelly.mywarp.service.economy
 me.taylorkelly.mywarp.service.limit
 me.taylorkelly.mywarp.service.teleport
-me.taylorkelly.mywarp.service.teleport.strategy
 me.taylorkelly.mywarp.service.teleport.timer
 me.taylorkelly.mywarp.sign
 me.taylorkelly.mywarp.util
