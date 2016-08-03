@@ -10,7 +10,6 @@ me.taylorkelly.mywarp.command.util.paginator
 me.taylorkelly.mywarp.command.util.printer
 me.taylorkelly.mywarp.platform
 me.taylorkelly.mywarp.platform.capability
-me.taylorkelly.mywarp.platform.profile
 me.taylorkelly.mywarp.service.economy
 me.taylorkelly.mywarp.service.limit
 me.taylorkelly.mywarp.service.teleport
