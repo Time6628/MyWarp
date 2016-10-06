@@ -1,6 +1,7 @@
 package me.taylorkelly.mywarp.commands;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -37,7 +38,13 @@ public class BasicCommands {
 
     @Command(aliases = { "pcreate", "pset" }, usage = "<name>", desc = "commands.create-private.description", fee = Fee.CREATE_PRIVATE, min = 1, permissions = { "mywarp.warp.basic.createprivate" })
     public void createPrivateWarp(CommandContext args, Player sender) throws CommandException {
+        if (!MyWarp.players.contains(sender)) {
+            MyWarp.players.add(sender);
+            sender.sendMessage(ChatColor.GRAY + "======" + ChatColor.AQUA + "Enter warp name" + ChatColor.GRAY + "======");
+        }
+        /*
         String name = args.getJoinedStrings(0);
+
 
         CommandUtils.checkTotalLimit(sender);
         CommandUtils.checkPrivateLimit(sender);
@@ -46,10 +53,16 @@ public class BasicCommands {
         MyWarp.inst().getWarpManager().addWarpPrivate(name, sender);
         sender.sendMessage(MyWarp.inst().getLocalizationManager()
                 .getString("commands.create-private.created-successful", sender, name));
+                */
     }
 
     @Command(aliases = { "create", "set" }, usage = "<name>", desc = "commands.create.description", fee = Fee.CREATE, min = 1, permissions = { "mywarp.warp.basic.createpublic" })
     public void createPublicWarp(CommandContext args, Player sender) throws CommandException {
+        if (!MyWarp.pplayers.contains(sender)) {
+            MyWarp.pplayers.add(sender);
+            sender.sendMessage(ChatColor.GRAY + "======" + ChatColor.AQUA + "Enter warp name" + ChatColor.GRAY + "======");
+        }
+        /*
         String name = args.getJoinedStrings(0);
 
         CommandUtils.checkTotalLimit(sender);
@@ -59,6 +72,7 @@ public class BasicCommands {
         MyWarp.inst().getWarpManager().addWarpPublic(name, sender);
         sender.sendMessage(MyWarp.inst().getLocalizationManager()
                 .getString("commands.create.created-successful", sender, name));
+                */
     }
 
     @Command(aliases = { "delete", "remove" }, usage = "<name>", desc = "commands.delete.description", fee = Fee.DELETE, min = 1, permissions = { "mywarp.warp.basic.delete" })

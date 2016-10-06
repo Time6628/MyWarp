@@ -1,10 +1,13 @@
 package me.taylorkelly.mywarp;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import me.taylorkelly.mywarp.commands.RootCommands;
+import me.taylorkelly.mywarp.data.RubbertListener;
 import me.taylorkelly.mywarp.data.WarpManager;
 import me.taylorkelly.mywarp.data.WarpSignManager;
 import me.taylorkelly.mywarp.dataconnections.ConnectionManager;
@@ -24,6 +27,7 @@ import org.apache.commons.lang.Validate;
 import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -32,6 +36,10 @@ import org.bukkit.util.FileUtil;
 import org.dynmap.DynmapCommonAPI;
 
 public class MyWarp extends JavaPlugin implements Reloadable {
+
+    public static List<Player> players;//private warp players
+
+    public static List<Player> pplayers;//public warp players
 
     /**
      * The plugin instance for MyWarp
@@ -300,6 +308,9 @@ public class MyWarp extends JavaPlugin implements Reloadable {
         permissionsManager = new PermissionsManager();
         warpManager = new WarpManager();
 
+        players = new ArrayList<Player>();
+        pplayers = new ArrayList<Player>();
+
         setupPlugin();
     }
 
@@ -352,6 +363,7 @@ public class MyWarp extends JavaPlugin implements Reloadable {
         if (getWarpSettings().warpSignsEnabled) {
             getServer().getPluginManager().registerEvents(new WarpSignManager(), this);
         }
+        getServer().getPluginManager().registerEvents(new RubbertListener(), this);
     }
 
     @Override
@@ -365,4 +377,5 @@ public class MyWarp extends JavaPlugin implements Reloadable {
         getLocalizationManager().reload();
         setupPlugin();
     }
+
 }
